@@ -207,7 +207,8 @@ def calcular_kg(lista , nome_peso):
                  'quant':quantidade,
                  'kg/barra':kg,
                  "kg/total":kg_total,
-                 'sobra':sobra}
+                 'sobra':sobra,
+                 'perfis_cortados':perfis_cortados}
 
 
 def calcular_porta(dimensao, folhas = 1 , qnt=1):
@@ -231,13 +232,13 @@ def calcular_porta(dimensao, folhas = 1 , qnt=1):
 
 def get_preco_cor(cor):
         if cor ==1 :
-            return 'brilho'
+            return 34,'brilho'
         if cor == 2 :
-            return 'branco'
+            return 35,'branco'
         if cor ==3 :
-            return 'preto'
+            return 39,'preto'
         if cor == 4 :
-            return 'bronze'
+            return 40,'bronze'
 
 
 
@@ -274,4 +275,19 @@ def separar_cortes(lista,altura):
         return lista_maior,lista_menor
 
 
+def calcular_grade(perfil_externo,perfil_grade,altura_grade,largura_grade):
 
+     desconto = perfil_externo*2
+     largura_interna = largura_grade-desconto
+     espaco = 25 + perfil_grade
+     quantidade_travessao = int((largura_interna/espaco)-1)
+     return (altura_grade-desconto,quantidade_travessao)
+
+
+
+def getLista(qntItens,item):
+
+    lista=[]
+    for i  in range(qntItens):
+        lista.append(item)
+    return  lista

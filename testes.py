@@ -1,23 +1,39 @@
+from telaCustom import Tela
+from Calculo import *
+from screem import Toplevel
 if __name__ =="__main__":
-   # lista = [('101',2.604)]
-  #  cadastrar_perfil(lista)
+
+ tela = Tela()
 
 
-    '''altura = 1200
-    largura = 1200
-    lista = [('365',3.156)]
-    cadastrar_perfil(lista)
+ pro=tela.combo.get()
+ qnt = tela.entre_quantidade.insert(0,"1")
+ altura = tela.entre_altura.insert(0,'1200')
+ largura = tela.entre_largura.insert(0,'1200')
+ tela.calculo.add_cor(1)
+ tela.calculo.ao_clicar()
 
-    dimensao = (altura,largura)
+ tela.janela.mainloop()
 
-    mostrar_Tabela('perfis')
-    dados = calcular_janela(dimensao,quantidade_folhas=4)
-    mostrar(dados)'''
+ perfil_externo = 70
+ perfil_grade = 25
+ largura = 3000
+ altura = 3000
+ tamanho,quant = calcular_grade(perfil_externo,perfil_grade,altura,largura)
+
+ print(f"Sera necessario {quant} travesão de {tamanho} cm ")
 
 
-    LISTS = [1,2,3]
-    print(LISTS)
 
-    LISTS.extend([4,5]*2)
-    print(LISTS)
+
+
+
+perfis = getLista(quant,tamanho)
+
+nomePeso = ('tupo',1.3)
+res = calcular_kg(perfis,nomePeso)
+
+mostrar([res])
+
+
 
